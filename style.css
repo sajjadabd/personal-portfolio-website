@@ -1,0 +1,750 @@
+:root {
+    --navHeight : 2vh;
+}
+
+@font-face {
+    font-family : UbuntuBold;
+    src : url(./fonts/Ubuntu/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+    font-family : UbuntuRegular;
+    src : url(./fonts/Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family : Roboto;
+    src : url(./fonts/Roboto/Roboto-Thin.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: UbuntuBold;
+    margin : 0;
+    height : 100vh;
+    /* overflow-x : hidden; */
+    display : grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-areas : 'aside article'
+                          'footer footer';
+    box-sizing: border-box;
+    position : relative;
+	background : url(./img/fancy_deboss.png) repeat;
+	background-position : top left;
+	background-attachment : fixed;
+}
+
+
+a.resume {
+    text-decoration: none;
+    background-color: crimson;
+    color : white !important;
+    padding : 0.5em 1em;
+    border-radius : 10px;
+    margin : 1em;
+}
+
+
+div.fixMenu {
+    position : fixed;
+    display : none;
+    top : 50%;
+    right : 0;
+    z-index: 3;
+}
+
+
+div.fixMenu ul {
+    list-style-type: none;
+    margin : 0;
+    padding : 0;
+    --width : 25vw;
+}
+
+div.fixMenu ul li {
+    position : relative;
+    right : calc(-0.7 * var(--width));
+    text-align : left;
+    background : navy;
+    font-size : 0.8em;
+    width : var(--width);
+    box-sizing : border-box;
+    transition : 0.4s;
+}
+
+
+
+div.fixMenu ul li:nth-child(odd) {
+    background-color: darkred;
+}
+
+div.fixMenu ul li:hover {
+    right : 0;
+}
+
+
+div.fixMenu ul li.active {
+	right : 0;
+}
+
+div.fixMenu ul li a {
+    text-decoration: none;
+    padding : 0.5em 1em;
+    color : white;
+    display : block;
+}
+
+
+/* nav {
+    width : 100%;
+    height : var(--navHeight);
+    border : 1px solid black;
+    color : white;
+    grid-area : nav;
+} */
+
+aside {
+    /* border : 3px solid red; */
+    height : 1205vh;
+    /* border-right : 5px solid black; */
+}
+
+div.aside {
+    height : 100vh;
+    padding : 2em 1em;
+    /* border : 3px solid black; */
+    /* background-color : cyan; */
+    grid-area : aside;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items : center;
+    box-sizing: border-box;
+    position : sticky;
+    top : 0;
+}
+
+
+
+
+div.aside div.title {
+    text-align : center;
+    margin-top : 1em;
+    width : 100%;
+    font-size : 1.3em;
+}
+
+
+
+div.aside div.photo {
+    width : 180px;
+    height : 180px;
+    background : url(./img/sjabd.jpg);
+    background-size : cover;
+    border-radius : 50%;
+}
+
+div.aside div.menu {
+    display : flex;
+    font-size : 1.5em;
+    flex-direction : column;
+    justify-content: center;
+    align-items : center;
+}
+
+div.menu ul {
+    list-style-type: none;
+    padding : 0;
+    margin : 0;
+    display: flex;
+    flex-direction : column;
+}
+
+div.menu ul li {
+    display: flex;
+    justify-content: center;
+}
+
+div.menu ul li a {
+    padding : 0.1em 1em;
+    margin-bottom: 0.1em;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    display : block;
+    float : left;
+    text-align : center;
+}
+
+div.menu ul li a::after {
+    content: '';
+    display : block;
+	margin : auto;
+    width : 0%;
+    height : 2px;
+    background-color: black;
+    transition : .5s;
+    transform-origin: center;
+}
+
+div.menu ul li a.active::after {
+    width : 100%;
+}
+
+div.menu ul li a:hover::after {
+    width : 100%;
+}
+
+
+article {
+    height : 100vh;
+    width : 100%;
+    grid-area : article;
+    /* border : 1px solid black; */
+    box-sizing: border-box;
+}
+
+
+
+article div.part {
+    width : 100%;
+    /* border : 2px solid black; */
+    box-sizing: border-box;
+    /* background-color: mediumaquamarine; */
+    min-height : 100vh;
+}
+
+
+div.part {
+    display : flex;
+    flex-direction: column;
+    justify-content : flex-start;
+    align-items : flex-start;
+    padding-bottom : 8em;
+}
+
+div.part:last-child {
+    padding-bottom : 0;
+}
+
+
+div.titr {
+    padding : 1em 1em 0.3em 0.3em;
+    font-size : 3em;
+    border-bottom : 5px solid red;
+    margin-bottom: 1em;
+    font-family : UbuntuBold;
+}
+
+
+div.context {
+    /* border : 2px solid red; */
+    width : calc(100% - 40px);
+    height : 40%;
+    margin : 0 auto;
+    font-family : UbuntuRegular;
+}
+
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+
+
+/* unvisited link */
+code a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+code a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+/* mouse over link */
+code a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+code a:active {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+div.skill div.bar {
+    margin-top : 5px;
+    width : 20vw;
+    height : 10px;
+    background-color : rgba(128, 128, 128, 0.5);
+}
+
+
+div.skill div.bar div.percent {
+    width : 0;
+    height : 10px;
+    background-color: dodgerblue;
+    transition : 1s;
+}
+
+
+div.barContainer {
+	display : flex;
+	flex-direction : row;
+}
+
+div.barContainer div.percentContainer {
+	margin : 0;
+	padding : 0;
+	padding-left : 0.5em;
+	font-size : 0.7em;
+	align-self : center;
+}
+
+#About div.context {
+    font-size : 1.5em;
+}
+
+code {
+    background-color : red;
+    color : white;
+    border-radius: 10px;
+    padding : 0.2em;
+    font-family: UbuntuBold;
+}
+
+#About ul li {
+    margin : 10px;
+    line-height : 1.6em;
+}
+
+#Skills div.mySkills {
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows: auto;
+    font-size : 1.2em;
+}
+
+
+#Skills div.mySkills div.skill {
+    /* border : 1px solid black; */
+    padding : 1em;
+    box-sizing: border-box;
+}
+
+#Skills div.subtitr {
+	font-size : 1.4em;
+  padding : 0.5em;
+  background-color: crimson;
+  font-family : UbuntuBold;
+}
+
+
+
+
+
+#Experience div.context {
+    border-left : 5px dashed gray;
+}
+
+
+
+#Experience div.context div.item {
+    margin : 1em;
+    margin-top : 0;
+    padding : 1em;
+    background-color : white;
+    font-size : 2em;
+    position : relative;
+    --picSize : 50px;
+}
+
+#Experience div.context div.item div.image {
+    content: '';
+    position : absolute;
+    margin-top : 1em;
+    left : -2em;
+    top : 0;
+    width : var(--picSize);
+    height : var(--picSize);
+    user-select: none;
+}
+
+#Experience div.context div.item div.image img {
+    width : var(--picSize);
+    height : var(--picSize);
+    border-radius : 50%;
+}
+
+
+#Experience div.context div.item div.comment {
+    margin-top : 1em;
+    font-size : 0.7em;
+    font-family : UbuntuRegular;
+}
+
+
+#Experience div.context div.item ul li {
+    margin-bottom : 0.3em;
+}
+
+
+#Experience div.context div.item div.titles {
+    margin-top : 1em;
+    font-size : 0.7em;
+    font-family : UbuntuRegular;
+    grid-area : titles;
+}
+
+#Experience div.context div.item div.technologies {
+    margin-top : 1em;
+    font-size : 0.7em;
+    font-family : UbuntuRegular;
+    grid-area : tech;
+}
+
+#Experience div.context div.item div.achievements {
+    margin-top : 1em;
+    font-size : 0.7em;
+    font-family : UbuntuRegular;
+    grid-area : ache;
+}
+
+
+#Educations div.context {
+    border-left : 5px dashed gray;
+    --picSize : 50px;
+}
+
+#Educations div.context div.item {
+    padding : 1em;
+    margin : 2em;
+    display : grid;
+    position : relative;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas : 'major major'
+                          'uni date';
+    /* border : 1px solid black; */
+    background-color: white;
+    font-size : 1.3em;
+}
+
+#Educations div.context div.item div {
+    /* border : 1px solid black; */
+    padding : 1em;
+    align-self: center;
+}
+
+#Educations div.context div.item div.major {
+    grid-area : major;
+}
+
+#Educations div.context span.badge {
+    background-color: purple;
+    color : white;
+    padding : 0.4em;
+    border-radius : 10px;
+}
+
+#Educations div.context div.item div.uni {
+    grid-area : uni;
+}
+
+#Educations div.context div.item div.date {
+    font-size : 0.7em;
+    font-family : Roboto;
+    grid-area : date;
+}
+
+#Educations div.context div.item div.image {
+    left : -4.5em;
+    top : 0;
+    position : absolute;
+	user-select : none;
+}
+
+#Educations div.context div.item div.image img {
+    width : var(--picSize);
+    height : var(--picSize);
+    border-radius : 50%;
+}
+
+
+
+#Contact div.context {
+    display : grid;
+    grid-template-columns : 1fr;
+    font-size : 1.7em;
+}
+
+
+#Contact div.context div.item {
+    display : grid ;
+    grid-template-columns: 1fr 5fr;
+}
+
+#Contact div.context div.item div {
+    /* border : 1px solid black; */
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    padding : 0.4em;
+}
+
+
+#Contact div.context div.item div.icon {
+    font-size : 2em;
+}
+
+
+footer {
+    grid-area : footer;
+    height : 50vh;
+    /* background-color: black; */
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer div {
+    /* background-color: cyan; */
+    border : 1px solid black;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width : 900px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas : 'aside'
+                              'article';
+    }
+
+    aside {
+        height : 100vh;
+        border : none;
+    }
+
+
+    div.menu ul {
+        flex-direction : row;
+        flex-wrap : wrap;
+        justify-content: center;
+    }
+
+    div.menu ul li {
+        margin-top : 1em;
+    }
+
+    div.context div {
+        font-size : 0.8em;
+    }
+
+
+	#About div.context {
+		font-size : 1.4em;
+	}
+
+	#Skills div.mySkills {
+		font-size : 2em;
+    }
+
+    #Experience div.context {
+        border : none;
+    }
+
+    #Experience div.context div.item  {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-areas: 'image title'
+                             'body body'
+                             'titles titles'
+                             'tech tech'
+                             'ache ache';
+    }
+
+    #Experience div.context div.item div.image {
+        position : relative;
+        padding : 0;
+        margin : 0;
+        left : 0;
+        grid-area : image;
+    }
+
+    #Experience div.context div.item div.title {
+        grid-area : title;
+        align-self: center;
+        font-size : 0.6em;
+    }
+
+    #Experience div.context div.item div.comment {
+        grid-area : body;
+        font-size : 0.6em;
+    }
+
+    #Educations div.context {
+        border : none;
+    }
+
+    #Educations div.context div.item {
+        display : grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas : 'major major major'
+                              'image uni date';
+    }
+
+
+    #Educations div.context div.item div.image {
+        grid-area : image;
+        position : relative;
+        left : 0;
+    }
+
+    #Contact div.context div.item {
+        padding-bottom : 1em;
+    }
+
+    #Contact div.context div.item div.data {
+        font-size : 1em;
+    }
+
+    #Contact div.context div.item div.icon {
+        font-size : 1.1em;
+    }
+
+
+    div.fixMenu {
+        display : block;
+    }
+
+    div.fixMenu ul {
+        --width : 15vw;
+    }
+}
+
+
+
+@media only screen and (max-width : 500px) {
+
+    div.aside {
+        padding : 0em 0em 3em 0em;
+    }
+
+    div.menu ul {
+        flex-direction : column;
+    }
+
+    div.menu ul li {
+        margin-top : 0;
+    }
+
+    div.context div {
+        font-size : 0.7em;
+    }
+
+
+    div.skill div.bar,div.skill div.bar div.percent {
+        height : 5px;
+    }
+
+	#About div.context {
+		font-size : 1.2em;
+	}
+
+
+	#Skills div.mySkills {
+		font-size : 2em;
+    }
+	
+	#Experience div.context div.item {
+		margin : 0;
+		margin-top : 1em;
+	}
+	
+	#Experience div.context div.item div.title {
+        font-size : 0.4em;
+    }
+	
+    #Experience div.context div.item div.comment {
+        font-size : 0.4em;
+    }
+	
+	#Experience div.context div.item div.titles {
+        font-size : 0.4em;
+    }
+	
+	#Experience div.context div.item div.technologies {
+        font-size : 0.4em;
+    }
+	
+	#Experience div.context div.item div.achievements {
+        font-size : 0.4em;
+    }
+	
+
+    #Educations div.context div.item {
+		margin : 0;
+		margin-top : 1em;
+        display : grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas : 'major major major'
+                              'image uni uni'
+                              'date date date';
+    }
+
+
+    #Educations div.context div.item div.major {
+        font-size : 0.6em;
+    }
+
+    #Educations div.context div.item div.uni {
+        font-size : 0.6em;
+    }
+
+    #Educations div.context div.item div.date {
+        font-size : 0.6em;
+    }
+
+
+    #Contact div.context div.item div.data {
+        font-size : 0.8em;
+    }
+
+    #Contact div.context div.item div.icon {
+        font-size : 1em;
+    }
+
+    div.fixMenu ul {
+        --width : 25vw;
+    }
+}
